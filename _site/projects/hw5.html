@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+  Updates for JPN Fall 2024
+  FALL2024ID20234
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Homework 5 Visualizations">
+  <meta property="og:description" content="Some visualizations with the Licenses Dataset">
+  <meta property="og:image" content="https://media.tenor.com/8RcIoWTKYR4AAAAe/scuze-corgi.png">
+
+  <title>Homework 5 Visualizations</title>
+  <meta name="description" content="Some visualizations with the Licenses Dataset">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>IS445 Jekyll Template</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      <a class="nav-item nav-link " href="/about/">About</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="homework-5">Homework 5</h1>
+
+<p>Doing visualizations with the business licenses dataset!</p>
+
+<h2 id="visualization-1-bar-chart-with-dropdown-to-select-license-status">Visualization 1: Bar chart with dropdown to select License Status</h2>
+
+<p><br /></p>
+
+<vegachart schema-url="/assets/json/hw5_chart1.json" style="width: 100%"></vegachart>
+
+<p><br /></p>
+
+<p>This visualization displays the different professional license types in the dataset, with each bar representing a unique license type (such as DETECTIVE BOARD, COSMO, DENTAL, etc.) and showing the total count of licenses. It has an interactivity feature that lets users filter on license status through a dropdown. I used a horizontal stacked bar chart with quantitative encoding for the x-axis (the total number of licenses) and nominal encoding for the y-axis (the license type). The bars are colored by States using the tableau20 color scheme. I chose to color by states because I wanted to see if states used license statuses that other states don’t use (for example, the DECEASED license status appears to only be used by the state of Illinois). I chose this color scheme because it has obviously different colors, making it easy to tell the different license statuses at just a glance, which is friendlier on the audience. On the analysis side, I performed data transformations like removing null and empty state values and grouping the data using pandas groupby() to count each license type and status combination. This aggregation step was crucial for creating accurate stacked bars and improving chart performance, and without it, I was getting an error when I tried to make my Altair chart. I wanted to make this specific visualization because I felt like it was something I was personally curious about when I initially looked through the business licenses dataset, and I found it hard to tell what licenses were in each category just from glancing at the dataset. I wanted to get an estimate of how many licenses were in each status, and I think my interactivity on this visualization gives the audience the power to do that. Finally, I saved the chart as a json to my assets and I was able to put it on this page.</p>
+
+<p><br /></p>
+
+<h2 id="visualization-2-bar-chart-with-dropdown-to-select-state">Visualization 2: Bar chart with dropdown to select State</h2>
+
+<p><br /></p>
+
+<vegachart schema-url="/assets/json/hw5_chart2.json" style="width: 100%"></vegachart>
+
+<p><br /></p>
+
+<p>The second visualization explores how different license types are distributed across states, (inspired by my findings about the license statuses only being used by certain states, I wondered if there were license types that some states didn’t have) colored by their license status. This chart uses the same encoding types as the first visualization: quantitative encoding for the count on the x-axis and nominal encoding for license types on the y-axis. However, the coloring scheme here was done on License Status, using the category20 color scheme to ensure clear differentiation between active, expired, and other license statuses. I chose to color on license status because I felt like it would be helpful for users to also see how many active licenses are in the state. The interactivity feature I implemented in this visualization is a dropdown that allows users to filter the data by state. This interactivity lets users focus on specific states of interest and compare license type distributions across different states without being overwhelmed by all the observations. This was inspired by a similar idea as what was behind my first visualization, where I just wished to be able to see state information from the dataset, but that was definitely something I could not accomplish just from skimming through the dataset’s rows and columns. The filtering allows patterns to show through (for example, the audience can easily see that Kentucky (KY) has less licenses than Illinois (IL)) The same data transformations from the first visualization were applied here, with the additional step of grouping by state to enable the state-based filtering functionality.</p>
+
+<p><br /></p>
+
+<!-- these are written in a combo of html and liquid -->
+
+<div class="left">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/UIUC-iSchool-DataViz/is445_data/raw/main/licenses_fall2022.csv">
+  The Data
+</a>
+</div>
+
+<div class="right">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/annabelle-zhang/data-visualizations/blob/main/hw5.ipynb">
+  The Analysis
+</a>
+</div>
+
+</div>
+  </main>
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>A. P. Corgi</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:username@domain.com"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/jnaiman"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.twitter.com/your_username"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#1da1f2'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-twitter fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.youtube.com/your_channel_name"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#ff0000'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-youtube fa-1x"></i>
+    </a>
+
+</div>
+
+  Theme by <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a> and <a href="https://github.com/4dcu-be/4dcu.be">4dcu.be</a>.
+
+  
+<!--<small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+-->
+
+</footer>
+
+
+<!-- Custom page specific js files -->
+  
+    <script src='/assets/js/vega.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-lite.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-embed.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/justcharts.js' type="text/javascript"></script>
+  
+
+
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+</body>
+
+<!--
+end of checks! JPN
+-->
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
