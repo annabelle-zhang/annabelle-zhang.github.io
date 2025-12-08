@@ -1,4 +1,7 @@
 ---
+layout: default
+title: Homework 5
+permalink: /hw5/
 name: Homework 5 Visualizations
 tools: [Python, HTML, vega-lite, Altair]
 description: Some visualizations with the Licenses Dataset

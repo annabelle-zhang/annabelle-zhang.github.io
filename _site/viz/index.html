@@ -23,12 +23,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog">
-  <meta property="og:description" content="I am definitely not a corgi!">
+  <meta property="og:title" content="Final Part 3">
+  <meta property="og:description" content="visualizations for the last part of my final :)">
   <meta property="og:image" content="https://media.tenor.com/8RcIoWTKYR4AAAAe/scuze-corgi.png">
 
-  <title>Blog</title>
-  <meta name="description" content="I am definitely not a corgi!">
+  <title>Final Part 3</title>
+  <meta name="description" content="visualizations for the last part of my final :)">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -61,13 +61,13 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/viz/">Final</a>
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link active" href="/viz/">Final</a>
 
       <a class="nav-item nav-link " href="/hw5/">Homework 5</a>
 
       <a class="nav-item nav-link " href="/projects/">Projects</a>
 
-      <a class="nav-item nav-link active" href="/blog/">Blog</a>
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
 
       <a class="nav-item nav-link " href="/about/">About</a>
 
@@ -78,55 +78,30 @@
   </div>
 
 </nav>
-    <!-- Simple-Jekyll-Search https://github.com/christian-fei/Simple-Jekyll-Search -->
+    <h1 id="compelling-title">COMPELLING TITLE</h1>
 
-<div class="input-group mt-5 px-3">
-  <input id="search-input" type="text" class="form-control search-box" placeholder="Search posts..">
-  <div class="input-group-append">
-    <span class="input-group-text border border-primary bg-primary text-white">
-      <i class="fas fa-search"></i>
-    </span>
-  </div>
-  <button class="btn btn-outline-primary ml-1" onclick="location.href = '/blog/tags';">
-    <i class="fas fa-tags"></i>
-  </button>
-</div>
-<ul class="px-3" id="results-container"></ul>
+<p>Budget Visualizations</p>
 
-<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
-<script>
-  var sjs = SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        searchResultTemplate: '<a href="{url}" class="list-group-item list-group-item-action">{title}</a>',
-        noResultsText: '<li class="list-group-item list-group-item-action disabled">No results found</li>',
-        json: '/search.json'
-      })
-</script>
-<div class="card-group mt-2">
+<h2 id="visualization-1-bar-chart---budget-vs-departments">Visualization 1: Bar chart - budget vs departments</h2>
 
-  
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/blog/hello-blog-world" class="post card bg-secondary">
-    <div class="card-body text-white">
-      <h3 class="card-title">The Hello World of Blogs</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-light text-secondary">Technology</span>
-        
-        <span class="badge badge-light text-secondary">Blogging</span>
-        
-      </p>
-      <p class="card-text">This is a blog post to get you started.</p>
-    </div>
-    <div class="card-footer text-white">
-      22 August 2022
-    </div>
-  </a>
-</div>
-  
-  
-</div>
+<p>x-axis has three bars to represent revised budget, budget remaining, actual balance, y-axis has the bars grouped into departments - you can click on the bars to turn them a different color</p>
+
+<h2 id="visualization-2-line-chart---budget-changes-over-the-years">Visualization 2: Line chart - budget changes over the years</h2>
+
+<p>multiple lines with a legend and different colors to represent changes in budget over the years (for datasets)</p>
+
+<h2 id="visualizations-beyond-use-contextual-datasets-to-produce-some-other-visualizations-we-can-compare-to-need-two-of-these">Visualizations Beyond: Use contextual datasets to produce some other visualizations we can compare to (need two of these)</h2>
+
+<p><br /></p>
+
+<vegachart schema-url="/assets/json/hw5_chart1.json" style="width: 100%"></vegachart>
+
+<p><br /></p>
+
+<p>do citations for the datasets!!</p>
+
+<p>link the jupyter notebooks used for analysis</p>
+
   </main>
   <footer class="mt-auto py-3 text-center">
 
@@ -169,6 +144,17 @@
 
 </footer>
 
+
+<!-- Custom page specific js files -->
+  
+    <script src='/assets/js/vega.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-lite.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-embed.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/justcharts.js' type="text/javascript"></script>
+  
 
 
 
