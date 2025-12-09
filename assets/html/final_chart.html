@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-787f2c6c23ba089e74c2892bbbeb5486"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "category", "legend": {"title": null}, "scale": {"domain": ["Revised Budget", "Actual Balance"], "range": ["#9b59b6", "#3498db"]}, "type": "nominal"}, "tooltip": [{"field": "Budget Year", "title": "Year", "type": "ordinal"}, {"field": "category", "title": "Category", "type": "nominal"}, {"field": "amount", "format": ".2f", "title": "Amount (Millions of Dollars)", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0, "titlePadding": 15}, "field": "Budget Year", "title": "Year", "type": "ordinal"}, "xOffset": {"field": "category", "type": "nominal"}, "y": {"axis": {"titlePadding": 15}, "field": "amount", "scale": {"zero": true}, "title": "Amount (Millions of Dollars)", "type": "quantitative"}}, "height": 400, "params": [{"name": "dataset_selector", "bind": {"input": "select", "options": ["Revenues", "Expenses"], "name": "Select Dataset: "}, "value": "Revenues"}], "title": "City of Urbana's Budget Planning", "transform": [{"filter": "(datum.dataset_type === dataset_selector)"}], "width": "container", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-787f2c6c23ba089e74c2892bbbeb5486": [{"Budget Year": 2023, "category": "Revised Budget", "amount": 73.9170532, "dataset_type": "Revenues"}, {"Budget Year": 2024, "category": "Revised Budget", "amount": 89.881929, "dataset_type": "Revenues"}, {"Budget Year": 2025, "category": "Revised Budget", "amount": 102.674597, "dataset_type": "Revenues"}, {"Budget Year": 2023, "category": "Actual Balance", "amount": 74.0850021, "dataset_type": "Revenues"}, {"Budget Year": 2024, "category": "Actual Balance", "amount": 82.9935273, "dataset_type": "Revenues"}, {"Budget Year": 2025, "category": "Actual Balance", "amount": 76.8004353, "dataset_type": "Revenues"}, {"Budget Year": 2023, "category": "Revised Budget", "amount": 94.7012675, "dataset_type": "Expenses"}, {"Budget Year": 2024, "category": "Revised Budget", "amount": 121.9407231, "dataset_type": "Expenses"}, {"Budget Year": 2025, "category": "Revised Budget", "amount": 144.0726091, "dataset_type": "Expenses"}, {"Budget Year": 2023, "category": "Actual Balance", "amount": 67.1037779, "dataset_type": "Expenses"}, {"Budget Year": 2024, "category": "Actual Balance", "amount": 71.81601959999999, "dataset_type": "Expenses"}, {"Budget Year": 2025, "category": "Actual Balance", "amount": 96.5546944, "dataset_type": "Expenses"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

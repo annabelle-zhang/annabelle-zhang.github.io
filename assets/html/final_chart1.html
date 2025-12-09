@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-9a37aafe766eca380277ffbd652a4714"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "category", "legend": {"title": null}, "scale": {"domain": ["Spent Previous Year", "Revised Budget"], "range": ["#3498db", "#9b59b6"]}, "type": "nominal"}, "tooltip": [{"field": "Budget Year", "title": "Year", "type": "ordinal"}, {"field": "category", "title": "Category", "type": "nominal"}, {"field": "amount", "format": ".2f", "title": "Amount (Millions of Dollars)", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0, "titlePadding": 15}, "field": "Budget Year", "title": "Year", "type": "ordinal"}, "xOffset": {"field": "category", "sort": ["Spent Previous Year", "Revised Budget"], "type": "nominal"}, "y": {"axis": {"titlePadding": 15}, "field": "amount", "scale": {"zero": true}, "title": "Amount (Millions of Dollars)", "type": "quantitative"}}, "height": 400, "title": "New York City's Budget Planning", "width": "container", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-9a37aafe766eca380277ffbd652a4714": [{"Budget Year": 2016, "category": "Spent Previous Year", "amount": 54983.090000000004}, {"Budget Year": 2017, "category": "Spent Previous Year", "amount": 58486.4}, {"Budget Year": 2018, "category": "Spent Previous Year", "amount": 61321.6}, {"Budget Year": 2019, "category": "Spent Previous Year", "amount": 64593.4}, {"Budget Year": 2020, "category": "Spent Previous Year", "amount": 67781.5}, {"Budget Year": 2021, "category": "Spent Previous Year", "amount": 70440.5}, {"Budget Year": 2022, "category": "Spent Previous Year", "amount": 72266.13}, {"Budget Year": 2023, "category": "Spent Previous Year", "amount": 77331.4}, {"Budget Year": 2024, "category": "Spent Previous Year", "amount": 79476.5}, {"Budget Year": 2025, "category": "Spent Previous Year", "amount": 84887.1}, {"Budget Year": 2016, "category": "Revised Budget", "amount": 56656.55}, {"Budget Year": 2017, "category": "Revised Budget", "amount": 62524.9}, {"Budget Year": 2018, "category": "Revised Budget", "amount": 65714.0}, {"Budget Year": 2019, "category": "Revised Budget", "amount": 68560.8}, {"Budget Year": 2020, "category": "Revised Budget", "amount": 72913.7}, {"Budget Year": 2021, "category": "Revised Budget", "amount": 75209.4}, {"Budget Year": 2022, "category": "Revised Budget", "amount": 81059.12}, {"Budget Year": 2023, "category": "Revised Budget", "amount": 81198.7}, {"Budget Year": 2024, "category": "Revised Budget", "amount": 87121.5}, {"Budget Year": 2025, "category": "Revised Budget", "amount": 90331.9}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
