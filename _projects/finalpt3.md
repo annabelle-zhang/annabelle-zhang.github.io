@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Coast-to-Coast Budget Analysis
-permalink: /viz/
+permalink: /final/
 name: Final Part 3
 tools: [Python, HTML, vega-lite, Altair]
 description: visualizations for the last part of my final :)
